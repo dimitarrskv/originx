@@ -1,0 +1,33 @@
+mat-card-header {
+    display: block;
+    text-align: center;
+}
+
+mat-form-field {
+    width: 90%;
+}
+
+.login-card {
+    max-width: 480px;
+    margin-top: 64px;
+}
+
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.social-login-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.login-controls, .login-buttons {
+    text-align: center;
+}
+
+.separator {
+    text-align: center;
+    margin-top: 16px !important;
+}

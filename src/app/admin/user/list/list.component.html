@@ -1,0 +1,38 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" class="example-table"
+             matSort matSortActive="created" matSortDisableClear matSortDirection="asc">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Picture Column -->
+    <ng-container matColumnDef="picture">
+      <mat-header-cell *matHeaderCellDef>Profile Photo</mat-header-cell>
+      <mat-cell class="row-paddings" *matCellDef="let row"><img class="profile-photo" [src]="row.profile?.picture" alt="Profile Photo"></mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>E-mail</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.email }}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.profile?.name }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [length]="resultsLength" [pageSize]="5" [pageSizeOptions]="[5, 10, 25]">
+  </mat-paginator>
+</div>

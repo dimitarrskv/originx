@@ -1,0 +1,59 @@
+.container {
+    padding-top: 64px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dashboard-card {
+    width: 400px;
+    min-height: 200px;
+    text-align: center;
+    padding: 0;
+
+    cursor: pointer;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.dashboard-card:hover{
+    box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.4);
+}
+
+mat-icon {
+    font-size: 200px;
+    width: 100%;
+    height: 200px;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.sky-blue {
+    background: -moz-linear-gradient(45deg, #7ec0ee 0%, #008080 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #7ec0ee), color-stop(100%, #008080)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, #7ec0ee 0%, #008080 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, #7ec0ee 0%, #008080 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #7ec0ee 0%, #008080 100%); /* ie10+ */
+    background: linear-gradient(45deg, #7ec0ee 0%, #008080 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#7ec0ee',GradientType=1 ); /* ie6-9 */
+}
+
+.light-red {
+    background: -moz-linear-gradient(45deg, #e71837 0%, #008080 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #e71837), color-stop(100%, #008080)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, #e71837 0%, #008080 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, #e71837 0%, #008080 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #e71837 0%, #008080 100%); /* ie10+ */
+    background: linear-gradient(45deg, #e71837 0%, #008080 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#e71837',GradientType=1 ); /* ie6-9 */
+}
+
+mat-card-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+mat-card-content h1 {
+    font-weight: lighter;
+}
+

@@ -1,0 +1,22 @@
+<div class="navbar-wrapper">
+    <mat-toolbar class="mat-elevation-z6" color="primary">
+
+        <span>Origin</span>
+        <span>X</span>
+
+        <span class="fill-remaining-space"></span>
+
+        <button *ngIf="!authService.isLoggedIn" color="accent" mat-raised-button routerLink="/login">Sign-in</button>
+
+        <img *ngIf="authService.isLoggedIn" class="profile-img" matListAvatar src="{{authService.userDetails.picture}}" alt="...">
+        <button *ngIf="authService.isLoggedIn" mat-icon-button [mat-menu-trigger-for]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-menu x-position="before" #menu="matMenu">
+        <button mat-menu-item routerLink="/home"><mat-icon>home</mat-icon></button>
+        <button mat-menu-item routerLink="/profile">Profile</button>
+        <button mat-menu-item (click)="logout()">Sign-out</button>
+    </mat-menu>
+</div>
+    
