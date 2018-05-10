@@ -1,0 +1,34 @@
+.wrapper {
+    display: flex;
+    flex-flow: col wrap;
+
+    * {
+        flex: 1 100%;
+    }
+
+    .drawer {
+        flex-basis: 500px;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media all and (min-width: 600px) {
+    /* We tell both sidebars to share a row */
+    .drawer { flex: 1 auto; }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+    /* We invert order of first sidebar and main
+    * And tell the main element to take twice as much width as the other two sidebars 
+    */
+    .main { flex: 1 0px; }
+    .drawer { order: 1; }
+    .main    { order: 2; }
+}

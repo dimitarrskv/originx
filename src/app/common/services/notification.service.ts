@@ -7,10 +7,10 @@ export class NotificationService {
     constructor(public snackBar: MatSnackBar) { }
 
     success(message: string) {
-        this.snackBar.open(message);
+        this.snackBar.open(message, 'DISMISS');
     }
 
     error(message: string) {
-        this.snackBar.open(message);
+        this.snackBar.open(message, 'DISMISS');
     }
 }

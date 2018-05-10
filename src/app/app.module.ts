@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -60,8 +59,6 @@ import { AppCommonModule } from './common/common.module';
     BrowserAnimationsModule,
     AppRoutingModule,
 
-    ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
 
     JwtModule.forRoot({
@@ -70,7 +67,7 @@ import { AppCommonModule } from './common/common.module';
           useFactory: jwtOptionsFactory
       }
     }),
-    AppCommonModule
+    AppCommonModule.forRoot()
   ],
   providers: [
     ProfileService

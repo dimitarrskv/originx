@@ -3,9 +3,12 @@ import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } fr
 import { Observable } from 'rxjs/Observable';
 import { tap } from 'rxjs/operators/tap';
 import { finalize } from 'rxjs/operators/finalize';
+import { NotificationService } from './notification.service';
 
 @Injectable()
 export class HttpResponseInterceptor implements HttpInterceptor {
+
+    constructor(public snackService: NotificationService) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const started = Date.now();
@@ -20,6 +23,7 @@ export class HttpResponseInterceptor implements HttpInterceptor {
             },
             // Operation failed; error is an HttpErrorResponse
             error => {
+              this.snackService.error(error.error || 'Error');
               ok = 'failed';
             }
           ),
